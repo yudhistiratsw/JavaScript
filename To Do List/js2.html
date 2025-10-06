@@ -21,20 +21,20 @@
     <script>
         function tambahItem() {
             const input = document.getElementById("TDL");
-            const nilai = input.value.trim();
+            const tugas = input.value.trim();
 
-            if (nilai === "") {
+            if (tugas == "") {
                 alert("Silakan masukkan tugas.");
                 return;
             }
 
             const ul = document.getElementById("daftarToDo");
             const li = document.createElement("li");
-            li.textContent = nilai;
+            li.textContent = tugas;
 
             ul.appendChild(li);
 
-            input.value = ""; // Kosongkan input
+            input.value = ""; 
         }
     </script>
 
