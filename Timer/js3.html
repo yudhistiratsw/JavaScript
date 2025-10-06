@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Timer</title>
+</head>
+
+<body>
+
+    <h1>Stopwatch</h1>
+    <h2 id="Timer">0</h2>
+
+    <button onclick="start()">Start</button>
+    <button onclick="pause()">Stop</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+        let waktu = 0;
+        let jeda = 0;
+
+        function updateDisplay() {
+            document.getElementById("Timer").innerHTML = waktu;
+        }
+
+        function start() {
+            if (jeda == 0) {
+                jeda = setInterval(function () {
+                    waktu++;
+                    updateDisplay();
+                }, 1000);
+            }
+        }
+
+        function pause() {
+            clearInterval(jeda);
+            jeda = 0;
+        }
+
+        function reset() {
+            pause();
+             waktu = 0;
+            updateDisplay();
+        }
+    </script>
+
+</body>
+
+</html>
