@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+<title>To Do List</title>
+
+    </head>
+<body>
+
+    <h1>To Do List</h1>
+
+<form action="/action_page.php">
+  <label for="TDL">To Do List:</label><br>
+  <input type="text" id="TDL" name="TDL" placeholder="Tulis Tugas...">
+  <button onclick="tambahItem()">Tambah</button>
+</form> 
+
+<ul id="daftarToDo">
+    <!-- Item akan ditambahkan di sini -->
+</ul> 
+
+  <script>
+    function tambahItem() {
+        const input = document.getElementById("TDL");
+        const nilai = input.value.trim();
+
+        if (nilai === "") {
+            alert("Silakan masukkan tugas.");
+            return;
+        }
+
+        const ul = document.getElementById("daftarToDo");
+        const li = document.createElement("li");
+        li.textContent = nilai;
+
+        ul.appendChild(li);
+
+        input.value = ""; // Kosongkan input
+    }
+</script>
+
+</body>
+</html>

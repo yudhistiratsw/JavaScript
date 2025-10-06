@@ -1,0 +1,59 @@
+<html>
+
+<head>
+
+    <Title>
+        Latihan JavaScript 1
+    </Title>
+
+    <script>
+        function Kalkulator() {
+
+            let a = Number(prompt("Masukkan angka pertama:"));
+            if (isNaN(a)) {
+                alert("Input pertama bukan angka.");
+                return;
+            }
+
+            let b = Number(prompt("Masukkan angka kedua:"));
+            if (isNaN(b)) {
+                alert("Input kedua bukan angka.");
+                return;
+            }
+
+            let operator = prompt("Masukkan operator (+, -, *, /):");
+            if (operator == null || operator.trim() == "") {
+                alert("Operator tidak boleh kosong.");
+                return;
+            }
+
+            let hasil;
+
+            if (operator == "+") {
+                hasil = a + b;
+            } else if (operator == "-") {
+                hasil = a - b;
+            } else if (operator == "*") {
+                hasil = a * b;
+            } else if (operator == "/") {
+                if (b === 0) {
+                    alert("Tidak bisa dibagi dengan nol.");
+                    return;
+                }
+                hasil = a / b;
+            } else {
+                alert("Operator tidak dikenali.");
+                return;
+            }
+
+            alert("Hasil: " + hasil);
+        }
+
+    </script>
+
+</head>
+
+<body onload="Kalkulator()">
+</body>
+
+</html>
